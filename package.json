@@ -1,0 +1,23 @@
+{
+  "name": "readME_generator",
+  "version": "1.0.0",
+  "description": "GIVEN a command-line application that accepts user input WHEN I am prompted for information about my application repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davenportnw/readME_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davenportnw/readME_generator/issues"
+  },
+  "homepage": "https://github.com/davenportnw/readME_generator#readme",
+  "dependencies": {
+    "inquirer": "^7.2.0"
+  }
+}
