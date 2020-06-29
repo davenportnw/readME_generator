@@ -11,11 +11,11 @@ inquirer
     }
     ]).then (answers => {
         console.log(answers);
-             fs.appendFile('README.md', 'utf8', function (err, data) {
+             fs.appendFile('README.md', 'Title' + answers.title, function (err, data) {
                 if(err) {
                     throw err;
                 }else {
-                console.log("Saved!");
+                console.log("Your README was succesfully created!");
                 }
             })
     }).catch(error => {
