@@ -23,6 +23,12 @@ inquirer
         type: 'input',
         name: 'usage',
         message: 'How does your user use your application?'
+    },
+    {
+        type: 'input',
+        name: 'contributors',
+        message: "Any contributors besides you? If no, write none"
+
     }
     ]).then (answers => {
 
@@ -64,7 +70,16 @@ inquirer
 
                 }
             })
-    
+        //Contributors
+        fs.appendFile('README.md',("#Contributors " + '\n' +  answers.contributors + '\n'), function(err, data) {
+            if(err) {
+                throw err;
+            }else {
+                console.log("Your contributors of the application were succesfully added to your README file.");
+
+            }
+        })
+        
     }).catch(error => {
         if(error) {
             console.log('error', error);

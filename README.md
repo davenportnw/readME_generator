@@ -1,6 +1,8 @@
-#Readme
-Generates a READMe file
+#README GEnerator
+descafe
 #How to use the Application 
-do what the terminal says
+fneakl
 #Installation
-type in node filename.js 
+sddea
+#Contributors 
+None
