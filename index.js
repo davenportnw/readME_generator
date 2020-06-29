@@ -8,16 +8,28 @@ inquirer
         type: 'input',
         name: 'title',
         message: 'What is the title of your project?', 
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is the description of your project?'
     }
     ]).then (answers => {
-        console.log(answers);
-             fs.appendFile('README.md', 'Title' + answers.title, function (err, data) {
+             fs.appendFile('README.md', '#' + answers.title + '\n', function (err, data) {
                 if(err) {
                     throw err;
                 }else {
                 console.log("Your README was succesfully created!");
                 }
             })
+            fs.appendFile('README.md', 'Desciption:' + answers.description + '\n', function(err, data) {
+                if(err) {
+                    throw err;
+                }else {
+                    console.log("Your description was succesfully added to your README file.");
+                }
+            })
+    
     }).catch(error => {
         if(error) {
             console.log('error', error);
