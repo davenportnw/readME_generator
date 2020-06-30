@@ -40,6 +40,16 @@ inquirer
         message: "Pick a license for your application",
         choices: [ 'None', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3=Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Publice License 2.0' ] ,
         name: "license"
+    },
+    {
+        type:'input',
+        message: "What is your GitHub username?",
+        name: 'githubUser'
+    },
+    {
+        type: "input",
+        message: "What is a good contact email?",
+        name: "email"
     }
     ]).then (answers => {
 
@@ -110,6 +120,24 @@ inquirer
 
             }
         })
+
+        //GitHub User -> Questions
+        fs.appendFile('README.md', "#Questions", '\n', "Check out my GitHub page, www.github.com/", answers.githubUser, '\n', function(err, data) {
+            if(err) {
+                throw err;
+            }else {
+                console.log("Your GitHub Username was succesfully added to your README file.");
+
+            } 
+        }) 
+
+        fs.appendFile('README.md', ("If you have any questions, please email me at, " + answers.email, '\n', function(err, data) {
+            if(err) {
+                throw err;
+            } else {
+                console.log("Your email was added to your README file.")
+            }
+         }))
     
         }).catch(error => {
             if(error) {
