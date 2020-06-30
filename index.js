@@ -29,6 +29,17 @@ inquirer
         name: 'contributors',
         message: "Any contributors besides you? If no, write none"
 
+    },
+    {
+        type: "input",
+        message: "What are you test instructions?",
+        name: "testInstructions"
+    },
+    {
+        type:"list",
+        message: "Pick a license for your application",
+        choices: [ 'None', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3=Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Publice License 2.0' ] ,
+        name: "license"
     }
     ]).then (answers => {
 
@@ -79,13 +90,33 @@ inquirer
 
             }
         })
+
+        //Test Instructions
+        fs.appendFile('README.md',("#Test Instructions" + '\n' +  answers.testInstructions + '\n'), function(err, data) {
+            if(err) {
+                throw err;
+            }else {
+                console.log("Your test instructions were succesfully added to your README file.");
+
+            }
+        })
         
-    }).catch(error => {
-        if(error) {
-            console.log('error', error);
-        }else{
-            console.log('yo its something else.');
-        }
-    })
+        //License 
+        fs.appendFile('README.md',("#License" + '\n' +  answers.license + '\n'), function(err, data) {
+            if(err) {
+                throw err;
+            }else {
+                console.log("Your license was succesfully added to your README file.");
+
+            }
+        })
+    
+        }).catch(error => {
+            if(error) {
+                console.log('error', error);
+            }else{
+                console.log('yo its something else.');
+            }
+        })
 
    
