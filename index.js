@@ -32,7 +32,7 @@ inquirer
     },
     {
         type: "input",
-        message: "What are you test instructions?",
+        message: "What are your test instructions?",
         name: "testInstructions"
     },
     {
@@ -52,19 +52,17 @@ inquirer
         name: "email"
     }
     ]).then (answers => {
-
         //Title
-
-             fs.appendFile('README.md', ( '#' + answers.title + '\n'), function (err, data) {
-                if(err) {
-                    throw err;
-                }else {
-                console.log("Your README was succesfully created!");
-                }
-            })
+        fs.appendFileSync('README.md', ( '#' + answers.title), function (err, data) {
+            if(err) {
+                throw err;
+            }else {
+            console.log("Your README was succesfully created!");
+            }
+        })
 
         //Description
-            fs.appendFile('README.md', (answers.description + '\n'), function(err, data) {
+            fs.appendFileSync('README.md', ('\n' + answers.description + '\n'), function(err, data) {
                 if(err) {
                     throw err;
                 }else {
@@ -73,7 +71,7 @@ inquirer
             })
 
         //Installation
-            fs.appendFile('README.md',("#Installation" + '\n' +  answers.installation + '\n'), function(err, data) {
+            fs.appendFileSync('README.md',("#Installation" + '\n' +  answers.installation + '\n'), function(err, data) {
                 if(err) {
                     throw err;
                 }else {
@@ -83,7 +81,7 @@ inquirer
             })
 
         //How to use application 
-            fs.appendFile('README.md',("#How to use the Application " + '\n' +  answers.usage + '\n'), function(err, data) {
+            fs.appendFileSync('README.md',("#How to use the Application " + '\n' +  answers.usage + '\n'), function(err, data) {
                 if(err) {
                     throw err;
                 }else {
@@ -92,7 +90,7 @@ inquirer
                 }
             })
         //Contributors
-        fs.appendFile('README.md',("#Contributors " + '\n' +  answers.contributors + '\n'), function(err, data) {
+        fs.appendFileSync('README.md',('\n' + "#Contributors " + '\n' +  answers.contributors + '\n'), function(err, data) {
             if(err) {
                 throw err;
             }else {
@@ -102,7 +100,7 @@ inquirer
         })
 
         //Test Instructions
-        fs.appendFile('README.md',("#Test Instructions" + '\n' +  answers.testInstructions + '\n'), function(err, data) {
+        fs.appendFileSync('README.md',("#Test_Instructions" + '\n' +  answers.testInstructions + '\n'), function(err, data) {
             if(err) {
                 throw err;
             }else {
@@ -112,7 +110,7 @@ inquirer
         })
         
         //License 
-        fs.appendFile('README.md',("#License" + '\n' +  answers.license + '\n'), function(err, data) {
+        fs.appendFileSync('README.md',("#License" + '\n' +  answers.license + '\n'), function(err, data) {
             if(err) {
                 throw err;
             }else {
@@ -120,9 +118,9 @@ inquirer
 
             }
         })
-        
+
         //GitHub User -> Questions
-        fs.appendFile('README.md', ("#Questions" + "Check out my gibhut page, www.github.com/" + answers.githubUser + '\n'), function(err, data) {
+        fs.appendFileSync('README.md', ("#Questions" + '\n' + "Check out my gibhut page, www.github.com/" + answers.githubUser + '\n'), function(err, data) {
             if(err) {
                 throw err;
             } else {
@@ -134,10 +132,10 @@ inquirer
             if(err) {
                 throw err;
             } else {
-                console.log("Your email was added to your README file.")
+                console.log("Your README was succesfully created.")
             }
          })
-    
+
         }).catch(error => {
             if(error) {
                 console.log('error', error);
