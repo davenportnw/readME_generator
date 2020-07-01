@@ -120,24 +120,23 @@ inquirer
 
             }
         })
-
+        
         //GitHub User -> Questions
-        fs.appendFile('README.md', "#Questions", '\n', "Check out my GitHub page, www.github.com/", answers.githubUser, '\n', function(err, data) {
+        fs.appendFile('README.md', ("#Questions" + "Check out my gibhut page, www.github.com/" + answers.githubUser + '\n'), function(err, data) {
             if(err) {
                 throw err;
-            }else {
-                console.log("Your GitHub Username was succesfully added to your README file.");
+            } else {
+                console.log("Your GitHub username was added to your READMe.");
+            }
+        })
 
-            } 
-        }) 
-
-        fs.appendFile('README.md', ("If you have any questions, please email me at, " + answers.email, '\n', function(err, data) {
+        fs.appendFile('README.md', ("If you have any questions, please email me at, " + answers.email + '\n'), function(err, data) {
             if(err) {
                 throw err;
             } else {
                 console.log("Your email was added to your README file.")
             }
-         }))
+         })
     
         }).catch(error => {
             if(error) {
@@ -146,5 +145,3 @@ inquirer
                 console.log('yo its something else.');
             }
         })
-
-   

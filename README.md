@@ -1,24 +1,14 @@
-#Installation
-jalkdsj
+description is this
+#Contributors 
+None
 #How to use the Application 
-dklfa
-#title
-fjldkaf
+You do what the comand line says
+#Test Instructions
+To test you write node index.js
+#QuestionsCheck out my gibhut page, www.github.com/davenportnw
 #License
 Apache License 2.0
-#Contributors 
-daf
-#Test Instructions
-fd
-#fksdlafj
-jklad
-#How to use the Application 
-jcds
-#Contributors 
-a
+If you have any questions, please email me at, davenportnw@gmail.com
+#Title
 #Installation
-dcd
-#License
-GNU General Public License v3.0
-#Test Instructions
-s
+these are the instructions
